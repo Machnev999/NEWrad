@@ -7,15 +7,15 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-    public void shouldSetCurrentStation() {
+    public void shouldSetCurrentStation() { // простая проверка на выбор станции. тестим сеттер
         Radio rad = new Radio();
-        rad.setCurrentStation(5);
+        rad.setCurrentStation(5); 
 
         Assertions. assertEquals(5, rad.getCurrentStation());
     }
 
     @Test
-    public void shouldSetCurrentStation110() {
+    public void shouldSetCurrentStation110() { // проверка сеттера на выход за границу
         Radio rad = new Radio();
         rad.setCurrentStation(110);
 
@@ -23,14 +23,14 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldGetNumberOfStations() {
+    public void shouldGetNumberOfStations() { // проверяем как работает геттер на выбор станции
         Radio rad = new Radio(15);
 
         Assertions. assertEquals(15, rad.getNumberOfStations());
     }
 
     @Test
-    public void shouldSetNumberOfStations() {
+    public void shouldSetNumberOfStations() { // проверяем как работает выбор станции
         Radio rad = new Radio ();
         rad.setNumberOfStations(15);
 
@@ -38,14 +38,14 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldConstructorSetNumberOfStations() {
+    public void shouldConstructorSetNumberOfStations() { // проверка работы конструктора по выбору станции
         Radio rad = new Radio (15);
 
         Assertions. assertEquals(15, rad.getNumberOfStations());
     }
 
     @Test
-    public void shouldSetNumberOfStationsLess10() {
+    public void shouldSetNumberOfStationsLess10() { // проверяем выбор станции меньше 10
         Radio rad = new Radio ();
         rad.setNumberOfStations(5);
 
@@ -53,14 +53,14 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldConstructorSetNumberOfStationsLess10() {
+    public void shouldConstructorSetNumberOfStationsLess10() { // проверяем выбор станции меньше 10 по средствам констуркутора
         Radio rad = new Radio (5);
 
         Assertions. assertEquals(10, rad.getNumberOfStations());
     }
 
     @Test
-    public void shouldSetNumberOfStationsNegative() {
+    public void shouldSetNumberOfStationsNegative() { // проверка негативного значения путем сеттера
         Radio rad = new Radio ();
         rad.setNumberOfStations(-5);
 
@@ -68,14 +68,14 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldConstructorSetNumberOfStationsNegative() {
+    public void shouldConstructorSetNumberOfStationsNegative() { // проверка негативного значения путем констурктора
         Radio rad = new Radio (-5);
 
         Assertions. assertEquals(10, rad.getNumberOfStations());
     }
 
     @Test
-    public void shouldSetNumberOfStations10() {
+    public void shouldSetNumberOfStations10() { // проверка выбора станции 10
         Radio rad = new Radio ();
         rad.setNumberOfStations(10);
 
@@ -83,20 +83,20 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldConstructorSetNumberOfStations10() {
+    public void shouldConstructorSetNumberOfStations10() { // проверка выбора станции 10 через конструктор
         Radio rad = new Radio (10);
 
         Assertions. assertEquals(10, rad.getNumberOfStations());
     }
     @Test
-    public void shouldSetFactoryStation() {
+    public void shouldSetFactoryStation() { // простая проверка станции
         Radio rad = new Radio();
 
         Assertions. assertEquals(9, rad.getMaxStation());
     }
 
     @Test
-    public void shouldSetStationNegative() {
+    public void shouldSetStationNegative() { // проверка выбора отрицательного значения станции
         Radio rad = new Radio();
         rad.setCurrentStation(-1);
 
@@ -104,7 +104,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldGetNextStation() {
+    public void shouldGetNextStation() { // проверка  геттера при выборе след станции
         Radio rad = new Radio();
         rad.setCurrentStation(5);
 
@@ -114,11 +114,11 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldGetNextStationFromMax() {
-        Radio rad = new Radio(20);
-        rad.setCurrentStation(rad.getMaxStation());
+    public void shouldGetNextStationFromMax() { // проверка след станции через максимальную. 
+        Radio rad = new Radio(20); //устанавливаем значение объекта и его параметр
+        rad.setCurrentStation(rad.getMaxStation()); // устанвливаем станцию и берем значение максимальной станции
 
-        rad.nextStation();
+        rad.nextStation(); // вызываем метод след станции
 
         Assertions. assertEquals(0, rad.getCurrentStation());
     }
