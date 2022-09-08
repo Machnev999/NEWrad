@@ -8,12 +8,12 @@ public class RadioTest {
 
     @Test
     public void shouldSetCurrentStation() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(); // создали объект радио из Radio.java
 
-        rad.setCurrentStation(5);
+        rad.setCurrentStation(5);  // устанавливаем станцию на 5
 
         int expected = 5;
-        int actual = rad.getCurrentStation();
+        int actual = rad.getCurrentStation(); // запрашиваем значение установленной станции
 
        Assertions.assertEquals(expected, actual);
     }
@@ -45,12 +45,12 @@ public class RadioTest {
     @Test
     public void shouldGetNextStation() {
         Radio rad = new Radio();
-        rad.setCurrentStation(5);
+        rad.setCurrentStation(5); // устанавливаем значение 5
 
-        rad.nextStation();
+        rad.nextStation();// прописываем метод увеличения станции
 
         int expected = 6;
-        int actual = rad.getCurrentStation();
+        int actual = rad.getCurrentStation(); // запрашиваем выбранную станци + метод увеличения =  6
 
         Assertions.assertEquals(expected, actual);
     }
