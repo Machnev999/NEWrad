@@ -10,7 +10,7 @@ public class Radio {
     private int minVolume = 0;
     private int maxVolume = 100; // вынесли данные о границах в поля
 
-    public Radio () { 
+    public Radio () { // создаем конструктор
     }
 
     public Radio (int numberOfStations) { //  можно задаваться колличесвто станций .данное значение имеет границы до 10 и 10 включительно
